@@ -28,7 +28,7 @@
   </div>
   <p class="inline font-mono text-zinc-400">{description}</p>
   <p class="mt-6 flex items-baseline gap-x-1">
-    <span class="text-4xl font-semibold tracking-tight text-white tabular-nums w-20">${$priceTweened.toFixed(0)}</span>
+    <span class="text-4xl font-semibold tracking-tight text-white font-mono w-20">${$priceTweened.toFixed(0)}</span>
     <span class="text-sm font-semibold leading-6 text-zinc-300">/one-time fee</span>
   </p>
   <a href={link} aria-describedby="tier-{name.toLowerCase()}" class="mt-6 transition-all duraiton-300 tracking-wider block px-3 py-2 text-center font-semibold leading-6 text-white ring-1 {popular? 'bg-main shadow-xl ring-main hover:ring-4 focus-visible:outline-main' : 'bg-white/10 hover:bg-black ring-white/30 hover:ring-main focus-visible:outline-white'}  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Start Trading</a>

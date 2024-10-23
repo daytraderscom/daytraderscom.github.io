@@ -2,58 +2,60 @@
 let items = [
   {
     gist: "Funding",
-    title: "Start Somewhere",
+    title: "Start Here",
     body: "Funding your evaluation account is just the first step. We provide the tools and resources to help you succeed.",
-    classes: "flex flex-col gap-3 sm:pr-[4.16vw] sm:pt-4 sm:pl-4 sm:border-r sm:border-r-zinc-400 sm:border-b sm:border-b-zinc-400 sm:pb-14 relative z-[2]",
+    classes: "flex flex-col gap-3 sm:pr-[4.16vw] sm:pt-4 sm:pl-4 sm:pb-14 relative z-[2] sm:border-r sm:border-b sm:border-zinc-400 w-full sm:h-full group cursor-default",
     img: "./money.jpg",
   },
   {
     gist: "Awareness",
     title: "Stay Informed",
     body: "Get updates and alerts on up-to-the-moment market conditions. Stay ahead of the curve and the breakout.",
-    classes: "flex flex-col gap-3 sm:pl-[4.16vw] sm:pt-4 sm:border-b sm:border-b-zinc-400 sm:pb-14 relative z-[2]",
+    classes: "flex flex-col gap-3 sm:pl-[4.16vw] sm:pt-4 sm:pb-14 sm:border-b sm:border-zinc-400 relative z-[2] w-full sm:h-full group cursor-default",
     img: "./aware.jpg",
   },
   {
     gist: "Community",
     title: "Get Connected",
     body: "Join a vibrant group of fellow traders who live to maximize results. Success is contagious, catch the bug.",
-    classes: "flex flex-col gap-3 sm:pr-[4.16vw] sm:pl-4 sm:pb-4 sm:border-r sm:border-r-zinc-400 sm:pt-14 relative z-[2]",
+    classes: "flex flex-col gap-3 sm:pr-[4.16vw] sm:pl-4 sm:pb-4 sm:pt-14 relative z-[2] sm:border-r sm:border-zinc-400 w-full sm:h-full group cursor-default",
     img: "./community.jpg",
   },
   {
     gist: "Evidence",
     title: "Do What Works",
     body: "We never guess what works, we prove it time and time again. Leverage our blood, sweat and tears.",
-    classes: "flex flex-col gap-3 sm:pl-[4.16vw] sm:pb-4 sm:pt-14 relative z-[2]",
+    classes: "flex flex-col gap-3 sm:pl-[4.16vw] sm:pb-4 sm:pt-14 relative z-[2] w-full sm:h-full group cursor-default",
     img: "./evidence.jpg",
   },
 ];
 ---
 
-<section id="innovation" class="relative w-full flex flex-col items-center mt-16 sm:mt-20 2xl:mt-24 px-[5vw] md:px-[4vw] 2xl:px-60">
-  <h2 class="font-thin uppercase text-2xl sm:text-3xl lg:text-4xl md:text-left w-full">
-    <span class="font-bold">Innovating</span> Futures<br />
-    <span class="font-bold">Trading</span> Technology
-  </h2>
-  <div class="mt-4 text-zinc-400 md:text-left font-normal 2xl:text-lg self-start">Trusted by industry leaders, our technology is the backbone of top funding companies.</div>
-  <div class="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-[16px] sm:gap-0 mt-[32px] md:mt-[40px] xl:mt-14 w-full border-b border-b-zinc-400 pb-[48px] sm:border-none">
-    {
-      items.map((item, i) => (
-        <div class="flex flex-col items-center sm:w-[50%] sm:h-full relative group cursor-default">
-          <div class="absolute inset-0 z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div class="relative w-full h-full overflow-hidden">
-              <div class="absolute inset-0 bg-green-400 opacity-5" />
-              <img src={item.img} class="w-full h-full relative object-cover opacity-5 transform-gpu scale-125 group-hover:scale-100 transition-transform duration-[5s]" />
+<section id="innovation" class="relative w-full flex flex-col items-center mt-16 sm:mt-20 2xl:mt-24 px-4 lg:px-8">
+  <div class="w-full mx-auto max-w-7xl">
+    <h2 class="font-thin uppercase text-2xl sm:text-3xl lg:text-4xl md:text-left">
+      <span class="font-bold">Innovating</span> Futures<br />
+      <span class="font-bold">Trading</span> Technology
+    </h2>
+    <div class="mt-4 text-zinc-400 md:text-left font-normal 2xl:text-lg self-start">Trusted by industry leaders, our technology is the backbone of top funding companies.</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 mt-[32px] md:mt-[40px] xl:mt-14 w-full border-b border-b-zinc-400 pb-[48px] sm:border-none">
+      {
+        items.map((item, i) => (
+          <div class={item.classes}>
+            <div class="absolute inset-0 z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="relative w-full h-full overflow-hidden">
+                <div class="absolute inset-0 bg-green-400 opacity-5" />
+                <img src={item.img} class="w-full h-full relative object-cover opacity-5 transform-gpu scale-125 group-hover:scale-100 transition-transform duration-[5s]" />
+              </div>
+            </div>
+            <div>
+              <div class="font-light text-sm xl:text-base tracking-widest uppercase sm:border-none w-fit pt-4 sm:pt-0 mb-3">{item.gist}</div>
+              <div class="uppercase text-xl xl:text-2xl underline underline-offset-4 decoration-main/50">{item.title}</div>
+              <div class="font-thin text-zinc-400 lg:text-lg font-mono mt-3">{item.body}</div>
             </div>
           </div>
-          <div class={item.classes}>
-            <div class="font-light text-sm xl:text-base tracking-widest uppercase sm:border-none w-fit pt-4 sm:pt-0 mb-3">{item.gist}</div>
-            <div class="uppercase text-xl xl:text-2xl underline underline-offset-4 decoration-main/50">{item.title}</div>
-            <div class="font-thin text-zinc-400 lg:text-lg font-mono">{item.body}</div>
-          </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </section>

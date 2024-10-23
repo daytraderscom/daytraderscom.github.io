@@ -6,6 +6,9 @@ export default {
 			colors: {
 				'main': '#d63a3a',
 			},
+			screens: {
+				'3xl': '1920px',
+			},
 		},
 	},
 	plugins: [require('@tailwindcss/typography'),],

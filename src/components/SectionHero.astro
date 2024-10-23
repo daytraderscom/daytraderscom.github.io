@@ -2,10 +2,10 @@
 import Image from "astro/components/Image.astro";
 import HeroLinksA from "./HeroLinksA.astro";
 import HeroLinksB from "./HeroLinksB.astro";
-import heroImg from './hero.png';
+import heroImg from "./hero.png";
 ---
 
-<section id="home" class="h-screen -mt-20 relative flex items-end px-4 md:px-20 pb-20">
+<section id="home" class="h-screen -mt-20 relative flex items-end px-4 md:px-20 pb-20 3xl:max-w-[1900px] 3xl:mx-auto">
   <div class="absolute right-0 -top-40">
     <div class="relative">
       <Image src={heroImg} alt="Hero" class="h-full opacity-50 relative" />
@@ -43,18 +43,29 @@ import heroImg from './hero.png';
       <h1 class="text-4xl lg:text-7xl xl:text-[7rem] font-thin text-white">
         Risk our money<br />
         not your own<br />
-        <span class="text-main">start trading<br/> <b>right now.</b></span>
+        <span class="text-main">start trading<br /> <b>right now.</b></span>
       </h1>
       <div class="mt-10 py-3 grid grid-cols-3 bg-black/70 ring-1 ring-main text-center">
-        <div class="text-sm">
+        <div class="text-sm relative">
+          <svg class="absolute left-0 -top-0.5 h-12 w-12 fill-main/20 stroke-main" stroke-width="0" viewBox="0 0 32 32">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="#fff"></stop>
+                <stop offset="100%" style="#f00"></stop>
+              </linearGradient>
+            </defs>
+            <path style="fill: url(#grad1);" d="M15.67 24L13.934 23 16.221 19 12.332 19 16.325 12 18.062 13 15.778 17 19.668 17 15.67 24z M26,18A10,10,0,1,1,16,8h4v5l6-6L20,1V6H16A12,12,0,1,0,28,18Z"></path></svg
+          >
           <p class="text-base font-normal uppercase">Trade <b class="text-main">Instantly</b></p>
           <p>Get started in seconds.</p>
         </div>
-        <div class="text-sm">
+        <div class="text-sm relative">
+          <svg class="absolute left-0 -top-0.5 h-12 w-12 fill-main/20 stroke-main" stroke-width="0" viewBox="0 0 32 32"><path style="fill: url(#grad1);" d="M21,12V10H17V7H15v3H13a2.002,2.002,0,0,0-2,2v3a2.002,2.002,0,0,0,2,2h6v3H11v2h4v3h2V22h2a2.0023,2.0023,0,0,0,2-2V17a2.002,2.002,0,0,0-2-2H13V12Z M16,4A12,12,0,1,1,4,16,12.0353,12.0353,0,0,1,16,4m0-2A14,14,0,1,0,30,16,14.0412,14.0412,0,0,0,16,2Z"></path></svg>
           <p class="text-base font-normal uppercase">Use <b class="text-main">Our Money</b></p>
           <p>We'll take the risk for you.</p>
         </div>
-        <div class="text-sm">
+        <div class="text-sm relative">
+          <svg class="absolute left-0 -top-0.5 h-12 w-12 fill-main/20 stroke-main" stroke-width="0" viewBox="0 0 32 32"><path style="fill: url(#grad1);" d="M2 22H30V24H2zM2 26H30V28H2zM24 10a2 2 0 102 2 2 2 0 00-2-2zM16 16a4 4 0 114-4A4.0045 4.0045 0 0116 16zm0-6a2 2 0 102 2A2.002 2.002 0 0016 10zM8 10a2 2 0 102 2 2 2 0 00-2-2z M28,20H4a2.0051,2.0051,0,0,1-2-2V6A2.0051,2.0051,0,0,1,4,4H28a2.0051,2.0051,0,0,1,2,2V18A2.0027,2.0027,0,0,1,28,20ZM28,6H4V18H28Z"></path></svg>
           <p class="text-base font-normal">Daily <b class="text-main">Payouts</b></p>
           <p>Earn while you learn.</p>
         </div>
