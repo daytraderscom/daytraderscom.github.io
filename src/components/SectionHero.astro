@@ -1,0 +1,66 @@
+---
+import Image from "astro/components/Image.astro";
+import HeroLinksA from "./HeroLinksA.astro";
+import HeroLinksB from "./HeroLinksB.astro";
+import heroImg from './hero.png';
+---
+
+<section id="home" class="h-screen -mt-20 relative flex items-end px-4 md:px-20 pb-20">
+  <div class="absolute right-0 -top-40">
+    <div class="relative">
+      <Image src={heroImg} alt="Hero" class="h-full opacity-50 relative" />
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-zinc-950 to-transparent h-64"></div>
+    </div>
+  </div>
+  <!-- <svg viewBox="0 0 1020 380" class="absolute inset-x-0 top-10 -z-10 h-[800px] w-full stroke-main opacity-20 [mask-image:radial-gradient(55rem_40rem_at_right,white,transparent)]" aria-hidden="true">
+    <g>
+      <path d="M-57.33,329.63c78.53,29.52,135.09,24.6,170.67,16,120.07-29.04,248-257.33,442.07-246.56,133.77,7.43,167.54,167.3,309.93,199.7,40.44,9.2,101.96,11.23,186.67-29.04" fill="none" stroke="red" stroke-miterlimit="10"></path>
+      <path d="M413.83,254.39c200.25,68.58,413.7-186.21,620.55-189.26" fill="none" stroke="#0bff1e" stroke-miterlimit="10"></path>
+      <polygon points="871.85 42.45 871.85 250.14 854.07 250.14 854.07 285.56 848.15 285.56 848.15 250.14 830.37 250.14 830.37 42.45 848.15 42.45 848.15 16.52 854.07 16.52 854.07 42.45 871.85 42.45" fill="#071e0c" stroke="#0bff1e" stroke-miterlimit="10">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"></animateTransform>
+      </polygon>
+      <polygon points="719.55 158.25 719.55 235.63 701.77 235.63 701.77 271.05 695.85 271.05 695.85 235.63 678.07 235.63 678.07 158.25 695.85 158.25 695.85 132.33 701.77 132.33 701.77 158.25 719.55 158.25" fill="#071e0c" stroke="#0bff1e" stroke-miterlimit="10">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -8; 0 0" dur="5.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1"></animateTransform>
+      </polygon>
+      <polygon points="655.55 221.02 655.55 296.93 637.77 296.93 637.77 309.12 631.85 309.12 631.85 296.93 614.07 296.93 614.07 221.02 631.85 221.02 631.85 170.4 637.77 170.4 637.77 221.02 655.55 221.02" fill="#071e0c" stroke="#0bff1e" stroke-miterlimit="10">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -12; 0 0" dur="6.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"></animateTransform>
+      </polygon>
+      <polygon points="580.89 266.82 580.89 381.33 563.11 381.33 563.11 393.52 557.19 393.52 557.19 381.33 539.41 381.33 539.41 266.82 557.19 266.82 557.19 239.76 563.11 239.76 563.11 266.82 580.89 266.82" fill="#071e0c" stroke="#0bff1e" stroke-miterlimit="10">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -15; 0 0" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.6 0.1 0.4 0.9; 0.6 0.1 0.4 0.9"></animateTransform>
+      </polygon>
+      <polygon points="788.89 194.28 788.89 292.91 771.11 292.91 771.11 311.16 765.19 311.16 765.19 292.91 747.41 292.91 747.41 194.28 765.19 194.28 765.19 168.35 771.11 168.35 771.11 194.28 788.89 194.28" fill="#281212" stroke="red" stroke-miterlimit="10">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -14; 0 0" dur="7s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.36 0 0.66 0.56; 0.36 0 0.66 0.56"></animateTransform>
+      </polygon>
+    </g>
+  </svg> -->
+  <div class="flex flex-col w-full md:flex-row md:justify-between md:items-end md:space-x-20">
+    <div>
+      <svg class="w-12 mb-4 opacity-50" viewBox="0 0 165.94 336.54" fill="none" stroke-width="2">
+        <polygon class="text-main" points="27 0 38.73 29.24 62.04 29.24 82.98 139.48 103.9 29.24 127.21 29.24 138.94 0 27 0" stroke="currentColor"></polygon>
+        <polygon points="21.97 200.09 0 244.45 76.72 336.52 21.97 200.09" stroke="#fff"></polygon>
+        <polygon points="143.96 200.08 89.2 336.54 165.94 244.43 143.96 200.08" stroke="#fff"></polygon>
+      </svg>
+      <h1 class="text-4xl lg:text-7xl xl:text-[7rem] font-thin text-white">
+        Risk our money<br />
+        not your own<br />
+        <span class="text-main">start trading<br/> <b>right now.</b></span>
+      </h1>
+      <div class="mt-10 py-3 grid grid-cols-3 bg-black/70 ring-1 ring-main text-center">
+        <div class="text-sm">
+          <p class="text-base font-normal uppercase">Trade <b class="text-main">Instantly</b></p>
+          <p>Get started in seconds.</p>
+        </div>
+        <div class="text-sm">
+          <p class="text-base font-normal uppercase">Use <b class="text-main">Our Money</b></p>
+          <p>We'll take the risk for you.</p>
+        </div>
+        <div class="text-sm">
+          <p class="text-base font-normal">Daily <b class="text-main">Payouts</b></p>
+          <p>Earn while you learn.</p>
+        </div>
+      </div>
+    </div>
+    <HeroLinksA />
+    <!-- <HeroLinksB /> -->
+  </div>
+</section>

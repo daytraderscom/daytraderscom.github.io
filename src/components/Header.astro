@@ -1,0 +1,85 @@
+---
+import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, StickyHeader } from "astro-navbar";
+import Logo from "./Logo.astro";
+
+const currentPath = new URL(Astro.request.url).pathname;
+
+let items = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Products",
+    href: "/products",
+  },
+  {
+    name: "Careers",
+    href: "/careers",
+  },
+  {
+    name: "Affiliates",
+    href: "/affiliates",
+  },
+  {
+    name: "Help desk",
+    href: "https://help.daytraders.com/",
+  },
+];
+---
+
+<StickyHeader class="sticky top-0 border-b z-20 transition-all" scrollY={50} defaultClass="border-transparent py-6 px-12" activeClass="bg-black/50 border-main/20 px-0 py-2 backdrop-blur-lg">
+  <header class="lg:flex items-center justify-between px-6 gap-5">
+    <Astronav>
+      <div class="flex justify-between">
+        <a class="group" href="/">
+          <Logo />
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-zinc-200" />
+        </div>
+      </div>
+      <MenuItems class="hidden lg:flex flex-1 items-center">
+        <ul class="flex flex-col lg:flex-row lg:gap-5 flex-1 text-lg items-center justify-center mx-auto">
+          {
+            items.map((item, i) => (
+              <li>
+                <a class={currentPath == item.href ? "text-white" : "text-zinc-400 hover:underline hover:underline-offset-4 hover:decoration-main"} href={item.href}>
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex items-center space-x-6">
+          <a href="https://daytraders.com/member/member/" class="nav-cta relative bg-zinc-800 hover:bg-black hover:ring-1 hover:ring-main/50 py-2 pl-4 w-32">Login</a>
+          <a href="https://daytraders.com/member/member/" class="nav-cta relative bg-main hover:bg-black hover:ring-1 hover:ring-main/50 py-2 pl-4 w-32">Sign Up</a>
+        </div>
+      </MenuItems>
+    </Astronav>
+  </header>
+</StickyHeader>
+
+<style>
+  .nav-cta:after {
+    content: "\21C0";
+    color: #dcdcdc;
+    font-family: monospace;
+    transition: color 0.1s;
+    padding-right: 0.5rem;
+    cursor: pointer;
+    font-weight: 100;
+    margin-left: 0.5rem;
+    height: 10px;
+    font-size: 1.25rem;
+    position: absolute;
+    transition: all 0.5s;
+  }
+  .nav-cta:hover::after {
+    transform: translateX(5px);
+  }
+</style>

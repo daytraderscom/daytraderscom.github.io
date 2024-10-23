@@ -1,0 +1,83 @@
+---
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+let items = [
+  {
+    title: '<b class="text-main">No Delay</b>, Trade Today',
+    body: "Our patent pending technology lets you start trading immediately.",
+  },
+  {
+    title: '<b class="text-main">We Fund</b>, You Trade',
+    body: "We fully fund your account. We take the risk, you keep the profits.",
+  },
+  {
+    title: `<b class="text-main">Trade 23 hrs/day</b>, Every Day`,
+    body: "You can trade from 6PM ET to 4:59 PM ET* with live support 24/7.",
+  },
+  {
+    title: '<b class="text-main">No Daily Drawdown</b>, No Joke',
+    body: "With our live trailing threshold, you can forget about daily drawdown.",
+  },
+  {
+    title: '<b class="text-main">Max Position</b>, Max Gains',
+    body: "Master the art of increasing your position size while managing risk.",
+  },
+];
+
+let moreItems = ["100% on your first $25k per account", "Community of Traders", "Risk Management Tools", "Transparent Trading Rules", "Trade Across 100+ Countries", "Educational Courses", "Real-Time Market Data", "Lightning-Fast Payout Processing", "Flexible Account Sizes"];
+---
+
+<section id="success" class="relative w-full flex flex-col items-center mt-16 sm:mt-20 2xl:mt-24 px-[5vw] md:px-[4vw] 2xl:px-60">
+  <div class="overflow-hidden py-24 sm:py-32 w-full">
+    <div class="px-4 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div class="lg:pr-8 lg:pt-4">
+          <div class="lg:max-w-lg">
+            <h2 class="font-thin uppercase text-2xl sm:text-3xl lg:text-4xl md:text-left w-full [conten]">Why Traders<br /><span class="font-bold">Value Us</span></h2>
+
+            <dl class="mt-10 max-w-xl space-y-4 text-base leading-7 text-zinc-400 lg:max-w-none">
+              {
+                items.map((item, i) => (
+                  <div class="relative pl-9">
+                    <dt class="inline font-semibold text-white">
+                      <svg class="absolute left-1 top-1 h-5 w-5 text-zinc-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                        <rect x="0" y="10" width="20" height="1.5" />
+                      </svg>
+                      <span set:html={item.title} />
+                      &nbsp;
+                    </dt>
+                    <dd class="inline font-mono text-zinc-400">{item.body}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="flex-shrink-0 w-full">
+            <div class="border-2 border-main">
+              <YouTube id="dVLc7kNQ-_8" poster="./poster.png" playlabel="Play the video" title="Why Traders Value DayTraders" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <ul class="mt-6 text-lg leading-8 text-white grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] w-full gap-4">
+          {
+            moreItems.map((item, i) => (
+              <li class="bg-black flex items-center h-8 space-x-4">
+                <span class="h-8 w-8 bg-green-800 text-white flex items-center justify-center">
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l5 5l10 -10" />
+                  </svg>
+                </span>
+                <span class="font-medium">{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

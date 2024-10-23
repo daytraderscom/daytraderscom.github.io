@@ -1,0 +1,56 @@
+---
+import PlainLink from "./PlainLink.astro";
+
+let items = [
+  {
+    title: "Robust Support",
+    body: "Dedicated team of professionals available to assist traders with inquiries.",
+  },
+  {
+    title: "User-Friendly Platform",
+    body: "Intuitive system, packed with extensive resources for traders all levels.",
+  },
+  {
+    title: "Commitment to Quality",
+    body: "Educational materials and services held to an exacting standard.",
+  },
+];
+---
+
+<section id="success" class="relative w-full flex flex-col items-center mt-16 sm:mt-20 2xl:mt-24 px-[5vw] md:px-[4vw] 2xl:px-60">
+  <div class="bg-zinc-900 w-full">
+    <div class="overflow-hidden py-24 sm:py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div class="lg:ml-auto lg:pl-4">
+            <div class="lg:max-w-lg">
+              <h2 class="font-thin uppercase text-2xl sm:text-3xl lg:text-4xl md:text-left w-full [conten]">Your Success<br /><span class="font-bold">Is Our Success</span></h2>
+              <p class="mt-6 text-lg leading-8 text-zinc-400">Unlike traditional models, we don't earn from your fees or losses. Your growth is our priority and we're here to support you every step of the way.</p>
+              <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-zinc-400 lg:max-w-none">
+                {
+                  items.map((item, i) => (
+                    <div class="relative pl-9">
+                      <dt class="inline font-semibold text-white">
+                        <svg class="absolute left-1 top-1 h-5 w-5 text-zinc-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                          <rect x="0" y="10" width="20" height="1.5" />
+                        </svg>
+                        {item.title}
+                      </dt>
+                      <dd class="inline font-mono text-zinc-400">{item.body}</dd>
+                    </div>
+                  ))
+                }
+              </dl>
+              <div class="mt-6">
+                <PlainLink color="green" href="/#pricing">View Pricing</PlainLink>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start justify-end lg:order-first">
+            <img src="./dashboard.png" alt="Product screenshot" class="w-[48rem] max-w-none shadow-xl shadow-black sm:w-[57rem]" width="2432" height="1442" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

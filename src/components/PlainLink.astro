@@ -1,0 +1,13 @@
+---
+import DirectoryIcon from "./DirectoryIcon.astro";
+
+const { href, color, size } = Astro.props;
+let textColor = color === "white" ? "text-zinc-200" : color == "green"? "text-green-400" : "text-main";
+let fontSize = size === "small" ? "text-sm font-normal" : size === "large" ? "text-xl font-thin" : "text-lg font-normal";
+let classes = `${textColor} ${fontSize} font-mono px-4 py-3 inline-flex group items-center hover:underline underline-offset-4`;
+---
+
+<a href={href} class={classes}>
+  <DirectoryIcon />
+  <span><slot /></span>
+</a>
